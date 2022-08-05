@@ -1,5 +1,6 @@
 # Import cache
 .import/
+*.import
 
 # Binaries
 bin/
@@ -14,3 +15,4 @@ lib/
 
 # Other
 export_presets.cfg
+addons/

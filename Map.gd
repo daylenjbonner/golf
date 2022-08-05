@@ -62,6 +62,7 @@ func ball_at_rest():
 		rest = true
 	else:
 		rest = false
+		
 	return(rest)
 
 func reset_ball():
