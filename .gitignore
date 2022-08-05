@@ -1,0 +1,16 @@
+# Import cache
+.import/
+
+# Binaries
+bin/
+build/
+lib/
+
+# Translations
+*.translation
+
+# Mono
+.momo/
+
+# Other
+export_presets.cfg
