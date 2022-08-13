@@ -1,7 +1,7 @@
 # Golf
 A simple game with surprising depth that mixes inspiration from mini-golf and "The World's Hardest Game".
 
-![Course Selection](/assets/CourseSelect.png)
+![Course Selection](https://github.com/daylenjbonner/golf/blob/main/Assets/CourseSelect.png?raw=true)
 
 ## How to play
 1. Download zip file.
