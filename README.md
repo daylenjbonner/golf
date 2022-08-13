@@ -1,6 +1,8 @@
 # Golf
 A simple game with surprising depth that mixes inspiration from mini-golf and "The World's Hardest Game".
 
+![Course Selection](/assets/CourseSelect.png)
+
 ## How to play
 1. Download zip file.
 2. Unzip to convenient location on local disk.
