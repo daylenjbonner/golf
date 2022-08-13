@@ -1,7 +1,7 @@
 extends Control
 
 var three_point_pars = [2, 3, 2, 3, 4, 2, 2, 3, 2, 4, 4, 2, 2, 5, 4, 5, 3, 4]
-var four_point_pars = []
+var four_point_pars = [2, 3, 4, 3, 3, 5, 3, 3, 2, 3, 6, 2, 4, 4, 3, 3, 3, 6]
 var five_point_pars = []
 var six_point_pars = []
 
@@ -206,3 +206,76 @@ func _on_Map317_pressed():
 
 func _on_Map318_pressed():
 	get_tree().change_scene("res://ThreePointCourse/map18.tscn")
+
+
+# four-point course
+func _on_Map401_pressed():
+	get_tree().change_scene("res://FourPointCourse/map.tscn")
+
+
+func _on_Map402_pressed():
+	get_tree().change_scene("res://FourPointCourse/map2.tscn")
+
+
+func _on_Map403_pressed():
+	get_tree().change_scene("res://FourPointCourse/map3.tscn")
+
+
+func _on_Map404_pressed():
+	get_tree().change_scene("res://FourPointCourse/map4.tscn")
+
+
+func _on_Map405_pressed():
+	get_tree().change_scene("res://FourPointCourse/map5.tscn")
+
+
+func _on_Map406_pressed():
+	get_tree().change_scene("res://FourPointCourse/map6.tscn")
+
+
+func _on_Map407_pressed():
+	get_tree().change_scene("res://FourPointCourse/map7.tscn")
+
+
+func _on_Map408_pressed():
+	get_tree().change_scene("res://FourPointCourse/map8.tscn")
+
+
+func _on_Map409_pressed():
+	get_tree().change_scene("res://FourPointCourse/map9.tscn")
+
+
+func _on_Map410_pressed():
+	get_tree().change_scene("res://FourPointCourse/map10.tscn")
+
+
+func _on_Map411_pressed():
+	get_tree().change_scene("res://FourPointCourse/map11.tscn")
+
+
+func _on_Map412_pressed():
+	get_tree().change_scene("res://FourPointCourse/map12.tscn")
+
+
+func _on_Map413_pressed():
+	get_tree().change_scene("res://FourPointCourse/map13.tscn")
+
+
+func _on_Map414_pressed():
+	get_tree().change_scene("res://FourPointCourse/map14.tscn")
+
+
+func _on_Map415_pressed():
+	get_tree().change_scene("res://FourPointCourse/map15.tscn")
+
+
+func _on_Map416_pressed():
+	get_tree().change_scene("res://FourPointCourse/map16.tscn")
+
+
+func _on_Map417_pressed():
+	get_tree().change_scene("res://FourPointCourse/map17.tscn")
+
+
+func _on_Map418_pressed():
+	get_tree().change_scene("res://FourPointCourse/map18.tscn")

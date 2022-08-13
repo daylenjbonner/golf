@@ -213,9 +213,10 @@ func _on_Edges_body_entered(body):
 	if body == $Ball:
 		can_jump = true
 
-func _on_Hole_body_entered(_body):
-	reset_ball()
-	$Ball.hide()
+func _on_Hole_body_entered(body):
+	if body == $Ball:
+		reset_ball()
+		$Ball.hide()
 	
 	if best == 0 or strokes < best:
 		best = strokes

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Obstacles/MobileObstacle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Obstacles/Red/MobileObstacle.png" type="Texture" id=1]
 
 [sub_resource type="PhysicsMaterial" id=35]
 bounce = 1.0
@@ -9,8 +9,6 @@ bounce = 1.0
 radius = 27.0
 
 [node name="MobileObstacle" type="StaticBody2D"]
-position = Vector2( 0.24939, 0.198608 )
-rotation = 1.48619
 physics_material_override = SubResource( 35 )
 
 [node name="Sprite" type="Sprite" parent="."]
