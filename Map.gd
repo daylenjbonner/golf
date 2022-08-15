@@ -6,6 +6,7 @@ export (int) var hole
 var rng = RandomNumberGenerator.new()
 var ball = "normal"
 var ball_start = Vector2(64, 64)
+var indicator = false
 var strokes = 0
 var stroke_info = "Strokes: %s\nPar: %s\nBest: %s"
 var last_ball_direction
@@ -74,25 +75,37 @@ func reset_ball():
 	if not $Ball.visible:
 		$Ball.visible = true
 
+func update_indicator(direction):
+	if indicator:
+		$Ball/Sprite/Indicator.show()
+		$Ball.rotation = direction.angle()
+	else:
+		$Ball/Sprite/Indicator.hide()
+
 func update_stroke_info():
 	$StrokeInfo.text = stroke_info % [strokes, par, best]
 
 func check_ball():
 	if ball_at_rest():
-		if Input.is_action_pressed("cancel_swing"):
+		var direction = get_global_mouse_position() - $Ball.position
+		if Input.is_action_pressed("cancel_swing") or direction.length() < 15:
 			$StrokePower.value = 0
+			indicator = false
 		elif Input.is_action_just_released("start_stroke"):
 			if $StrokePower.value > 100:
-				var direction = get_global_mouse_position() - $Ball.position
 				var power = $StrokePower.value * direction.normalized()
 				$Ball.apply_central_impulse(power)
 				$StrokePower.value = 0
+				indicator = false
 				strokes += 1
 				update_stroke_info()
 			else:
 				$StrokePower.value = 0
+				indicator = false
 		elif Input.is_action_pressed("start_stroke") and not $ChooseBall.pressed:
 			$StrokePower.value += $StrokePower.step
+			indicator = true
+		update_indicator(direction)
 	else:
 		last_ball_direction = $Ball.linear_velocity.normalized()
 		match ball:
@@ -109,11 +122,6 @@ func check_ball():
 func check_on_water():
 	if on_water and ball != "skippy":
 		reset_ball()
-
-func check_esc():
-	if Input.is_action_just_pressed("ui_cancel"):
-		#$Menu.popup()
-		pass
 
 func check_ball_switch():
 	if Input.is_action_just_pressed("normal_ball"):
@@ -153,7 +161,6 @@ func _ready():
 func _physics_process(_delta):
 	check_ball()
 	check_on_water()
-	check_esc()
 	check_ball_switch()
 	
 	if restart:

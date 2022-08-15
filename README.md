@@ -4,7 +4,7 @@ A simple game with surprising depth that mixes inspiration from mini-golf and "T
 ![Course Selection](https://github.com/daylenjbonner/golf/blob/main/Assets/CourseSelect.png?raw=true)
 
 ## How to play
-1. Download zip file.
+1. Download zip file. (or clone respository to easily pull upadates)
 2. Unzip to convenient location on local disk.
 3. Download Godot for your platform (around 30 MB).
 4. Open the project.godot file with Godot.
@@ -16,7 +16,7 @@ Get the ball in the hole with as few strokes you can.
 ## Controls
 
 ### Mouse
-Use mouse to aim. Hold left click to increase stroke power reflected by the progress bar in the bottom-left corner. Release to swing (metaphorically). If you would like to cancel your shot before release, hold right mouse button while letting go of the left mouse button before the right (may take some practice).
+Use mouse to aim. Hold left click to increase stroke power reflected by the progress bar in the bottom-left corner. Release to swing (metaphorically). If you would like to cancel your shot before release then move the mouse close to the ball, or hold the right mouse button while letting go of the left mouse button before the right (may take some practice). 
 
 ### Numbers
 The numbers 1 through 6 switch to a particular ball type.
@@ -25,7 +25,7 @@ The numbers 1 through 6 switch to a particular ball type.
 3. Jumpy: Attempts to teleport forward upon collision (not on edges).
 4. Randy: Moves in Brownian motion (randomly). Only works while moving so there is always a chance it will zero its own velocity (thus stopping).
 5. Skippy: Moves on water without sinking.
-6. Sticky: Stops quickly upon collision. May impliment a stickier version that attaches to moving obstacles.
+6. Sticky: Stops quickly upon collision.
 
 ## Ball switching
 Every hole in golf can be completed without switches, though switches are required on many maps to achieve the full three star score (by going under par).
