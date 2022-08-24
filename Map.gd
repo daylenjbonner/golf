@@ -3,18 +3,23 @@ extends Node2D
 export (int) var par
 export (int) var hole
 
+const stroke_info = "Strokes: %s\nPar: %s\nBest: %s"
+const max_bounces = 2
+const max_jumps = 2
+
 var rng = RandomNumberGenerator.new()
 var ball = "normal"
-var ball_start = Vector2(64, 64)
+var positions = [Vector2(64, 64)]
 var indicator = false
 var strokes = 0
-var stroke_info = "Strokes: %s\nPar: %s\nBest: %s"
 var last_ball_direction
 var can_jump = true
+var can_bounce = true
 var on_water = false
+var bounces = 0
+var jumps = 0
 var restart = false
 var best
-
 
 # ball setup
 var _normal_texture = load("res://Assets/Balls/Ball.png")
@@ -23,6 +28,7 @@ var _jumpy_texture = load("res://Assets/Balls/Jumpy.png")
 var _randy_texture = load("res://Assets/Balls/Randy.png")
 var _skippy_texture = load("res://Assets/Balls/Skippy.png")
 var _sticky_texture = load("res://Assets/Balls/Sticky.png")
+
 
 func ball_setup():
 	$ChooseBall.add_icon_item(_normal_texture, "Normal")
@@ -45,6 +51,7 @@ func load_best():
 	else:
 		best = 0
 
+
 func save_best():
 	var best_file = "user://best%s.save" % [str(hole)]
 	var file = File.new()
@@ -66,14 +73,27 @@ func ball_at_rest():
 		
 	return(rest)
 
+
 func reset_ball():
-	var offset = ball_start - $Ball.position
-	
+	var offset = positions[0] - $Ball.position
 	$Ball.global_translate(offset)
 	$Ball.set_linear_velocity(Vector2(0, 0))
-	
 	if not $Ball.visible:
 		$Ball.visible = true
+
+
+func reset_stroke():
+	var offset = positions[-1] - $Ball.position
+	positions.pop_back()
+	$Ball.global_translate(offset)
+	$Ball.set_linear_velocity(Vector2(0, 0))
+	strokes -= 1
+	update_stroke_info()
+	if on_water:
+		ball = "skippy"
+		$Ball/Sprite.texture = _skippy_texture
+		$ChooseBall.select(4)
+
 
 func update_indicator(direction):
 	if indicator:
@@ -82,11 +102,19 @@ func update_indicator(direction):
 	else:
 		$Ball/Sprite/Indicator.hide()
 
+
 func update_stroke_info():
 	$StrokeInfo.text = stroke_info % [strokes, par, best]
 
+
 func check_ball():
 	if ball_at_rest():
+		jumps = 0
+		bounces = 0
+		can_jump = true
+		can_bounce = true
+		if positions.size() <= strokes:
+			positions.append($Ball.position)
 		var direction = get_global_mouse_position() - $Ball.position
 		if Input.is_action_pressed("cancel_swing") or direction.length() < 15:
 			$StrokePower.value = 0
@@ -113,15 +141,27 @@ func check_ball():
 				if can_jump:
 					if $Ball.test_motion(last_ball_direction):
 						$Ball.translate(65 * last_ball_direction)
+						jumps += 1
+						if jumps == max_jumps:
+							can_jump = false
+							ball = "normal"
+							$Ball/Sprite.texture = _normal_texture
+							$ChooseBall.select(0)
 			"randy":
 				rng.randomize()
 				var rand_mag = 30 * rng.randf_range(-1, 1)
 				var rand_ang = rng.randf_range(0, 2 * PI)
 				$Ball.apply_central_impulse(rand_mag * Vector2(cos(rand_ang), sin(rand_ang)))
+				if rng.randf() < 0.01:
+					ball = "normal"
+					$Ball/Sprite.texture = _normal_texture
+					$ChooseBall.select(0)
+
 
 func check_on_water():
 	if on_water and ball != "skippy":
-		reset_ball()
+		reset_stroke()
+
 
 func check_ball_switch():
 	if Input.is_action_just_pressed("normal_ball"):
@@ -172,33 +212,42 @@ func _physics_process(_delta):
 
 # signals
 func _on_Ball_body_entered(_body):
+	var hit = str($Ball.get_colliding_bodies().front())
+	if hit.begins_with("Mobile"):
+		$BounceTimer.start()
 	match ball:
-		"bouncy": # How to fix angle of accent without calculus?
+		"bouncy":
 			var quasi_speed = abs($Ball.linear_velocity.x) + abs($Ball.linear_velocity.y)
-			if quasi_speed < 500 and not $Ball.get_colliding_bodies().empty():
+			if can_bounce and not $Ball.get_colliding_bodies().empty():
 				$BounceTimer.start()
+				bounces += 1
+				if bounces == max_bounces:
+					can_bounce = false
+					ball = "normal"
+					$Ball/Sprite.texture = _normal_texture
+					$ChooseBall.select(0)
 		"sticky": # How to handle sticking to a moving obstacle?
 			$Ball.linear_velocity = Vector2.ZERO
 
 
 func _on_BounceTimer_timeout():
 	if strokes != 0:
-		$Ball.apply_central_impulse(250 * last_ball_direction)
+		$Ball.apply_central_impulse(200 * last_ball_direction)
 		
 	$BounceTimer.stop()
 
 
-func _on_Water_body_entered(_body):
-	if ball != "skippy":
-		strokes = 0
-		reset_ball()
-		update_stroke_info()
-	else:
+func _on_Water_body_entered(body):
+	if body == $Ball:
 		on_water = true
+		if ball != "skippy":
+			reset_stroke()
+			update_stroke_info()
 
 
-func _on_Water_body_exited(_body):
-	on_water = false
+func _on_Water_body_exited(body):
+	if body == $Ball:
+		on_water = false
 
 
 func _on_Grass_body_entered(body):

@@ -23,7 +23,7 @@ The numbers 1 through 6 switch to a particular ball type.
 1. Normal
 2. Bouncy: Impulse applied upon collision.
 3. Jumpy: Attempts to teleport forward upon collision (not on edges).
-4. Randy: Moves in Brownian motion (randomly). Only works while moving so there is always a chance it will zero its own velocity (thus stopping).
+4. Randy: Moves in Brownian motion (randomly).
 5. Skippy: Moves on water without sinking.
 6. Sticky: Stops quickly upon collision.
 
@@ -34,7 +34,7 @@ Every hole in golf can be completed without switches, though switches are requir
 If you are about to dive into the blue press 5 to survive.
 
 ### Bouncy, jumpy, and randy as energy sources
-Each can quickly loose control, thus sinking or entering another dimension off of the screen. It often makes sense to switch away from these before this happens. Sometimes bouncy gets stuck in an infinite bounce loop and jumpy gets stuck in a thick wall. Switching to normal or skippy should free the ball in such situations.
+Bouncy will automatically switch to normal after two bounces, and jumpy will automatically switch to normal after two jumps. Randy has a chance to automatically switch to normal based upon a weighted coin toss in each frame. Bounces and jumps reset after each stroke. It is possible to use bouncy, jumpy, and randy during the same stroke to cover more ground.
 
 ### Sticky precision
-While sticky is technically an energy sink, it is also quite helpful for getting around narrow corners and around concave obstacles (hint: try sticking to a cave with the hole just around the spokes).
+While sticky is technically an energy sink, it is also quite helpful for getting around narrow corners and concave obstacles (hint: try sticking to a cave with the hole just around the spokes).
