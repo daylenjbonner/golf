@@ -2,7 +2,7 @@ extends Control
 
 var three_point_pars = [2, 3, 2, 3, 4, 2, 2, 3, 2, 4, 4, 2, 2, 5, 4, 5, 3, 4]
 var four_point_pars = [2, 3, 4, 3, 3, 5, 3, 3, 2, 3, 6, 2, 4, 4, 3, 3, 3, 6]
-var five_point_pars = []
+var five_point_pars = [2, 2, 3, 2, 9, 3, 2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var six_point_pars = []
 
 
@@ -279,3 +279,40 @@ func _on_Map417_pressed():
 
 func _on_Map418_pressed():
 	get_tree().change_scene("res://FourPointCourse/map18.tscn")
+
+
+# five-point course
+func _on_Map501_pressed():
+	get_tree().change_scene("res://FivePointCourse/map.tscn")
+
+
+func _on_Map502_pressed():
+	get_tree().change_scene("res://FivePointCourse/map2.tscn")
+
+
+func _on_Map503_pressed():
+	get_tree().change_scene("res://FivePointCourse/map3.tscn")
+
+
+func _on_Map504_pressed():
+	get_tree().change_scene("res://FivePointCourse/map4.tscn")
+
+
+func _on_Map505_pressed():
+	get_tree().change_scene("res://FivePointCourse/map5.tscn")
+
+
+func _on_Map506_pressed():
+	get_tree().change_scene("res://FivePointCourse/map6.tscn")
+
+
+func _on_Map507_pressed():
+	get_tree().change_scene("res://FivePointCourse/map7.tscn")
+
+
+func _on_Map508_pressed():
+	get_tree().change_scene("res://FivePointCourse/map8.tscn")
+
+
+func _on_Map509_pressed():
+	get_tree().change_scene("res://FivePointCourse/map9.tscn")

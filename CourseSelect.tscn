@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://Main.tres" type="Theme" id=1]
 [ext_resource path="res://CourseSelect.gd" type="Script" id=2]
@@ -39,6 +39,15 @@
 [ext_resource path="res://FourPointCourse/map11.png" type="Texture" id=37]
 [ext_resource path="res://FourPointCourse/map12.png" type="Texture" id=38]
 [ext_resource path="res://FourPointCourse/map15.png" type="Texture" id=39]
+[ext_resource path="res://FivePointCourse/map7.png" type="Texture" id=40]
+[ext_resource path="res://FivePointCourse/map2.png" type="Texture" id=41]
+[ext_resource path="res://FivePointCourse/map3.png" type="Texture" id=42]
+[ext_resource path="res://FivePointCourse/map.png" type="Texture" id=43]
+[ext_resource path="res://FivePointCourse/map5.png" type="Texture" id=44]
+[ext_resource path="res://FivePointCourse/map9.png" type="Texture" id=45]
+[ext_resource path="res://FivePointCourse/map4.png" type="Texture" id=46]
+[ext_resource path="res://FivePointCourse/map6.png" type="Texture" id=47]
+[ext_resource path="res://FivePointCourse/map8.png" type="Texture" id=48]
 
 [sub_resource type="Theme" id=7]
 Label/colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -1210,10 +1219,9 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="FivePoint" type="VBoxContainer" parent="Courses"]
-visible = false
-margin_top = 83.0
+margin_top = 252.0
 margin_right = 930.0
-margin_bottom = 133.0
+margin_bottom = 338.0
 
 [node name="Label" type="Label" parent="Courses/FivePoint"]
 margin_right = 930.0
@@ -1224,10 +1232,12 @@ text = "Five-Point Course"
 [node name="FrontNine" type="HBoxContainer" parent="Courses/FivePoint"]
 margin_top = 18.0
 margin_right = 930.0
-margin_bottom = 32.0
+margin_bottom = 68.0
 
 [node name="Map501" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_bottom = 14.0
+margin_right = 78.0
+margin_bottom = 50.0
+icon = ExtResource( 43 )
 
 [node name="Progress" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
 margin_left = 82.0
@@ -1255,13 +1265,14 @@ margin_right = 90.0
 margin_bottom = 50.0
 
 [node name="Map502" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 4.0
-margin_right = 4.0
-margin_bottom = 14.0
+margin_left = 94.0
+margin_right = 172.0
+margin_bottom = 50.0
+icon = ExtResource( 41 )
 
 [node name="Progress2" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 176.0
+margin_right = 176.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress2"]
@@ -1280,18 +1291,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator2" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 180.0
+margin_right = 184.0
 margin_bottom = 50.0
 
 [node name="Map503" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 8.0
-margin_right = 8.0
-margin_bottom = 14.0
+margin_left = 188.0
+margin_right = 266.0
+margin_bottom = 50.0
+icon = ExtResource( 42 )
 
 [node name="Progress3" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 270.0
+margin_right = 270.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress3"]
@@ -1310,18 +1322,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator3" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 274.0
+margin_right = 278.0
 margin_bottom = 50.0
 
 [node name="Map504" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 12.0
-margin_right = 12.0
-margin_bottom = 14.0
+margin_left = 282.0
+margin_right = 360.0
+margin_bottom = 50.0
+icon = ExtResource( 46 )
 
 [node name="Progress4" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 364.0
+margin_right = 364.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress4"]
@@ -1340,18 +1353,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator4" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 368.0
+margin_right = 372.0
 margin_bottom = 50.0
 
 [node name="Map505" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 16.0
-margin_right = 16.0
-margin_bottom = 14.0
+margin_left = 376.0
+margin_right = 454.0
+margin_bottom = 50.0
+icon = ExtResource( 44 )
 
 [node name="Progress5" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 458.0
+margin_right = 458.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress5"]
@@ -1370,18 +1384,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator5" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 462.0
+margin_right = 466.0
 margin_bottom = 50.0
 
 [node name="Map506" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 20.0
-margin_right = 20.0
-margin_bottom = 14.0
+margin_left = 470.0
+margin_right = 548.0
+margin_bottom = 50.0
+icon = ExtResource( 47 )
 
 [node name="Progress6" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 552.0
+margin_right = 552.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress6"]
@@ -1400,18 +1415,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator6" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 556.0
+margin_right = 560.0
 margin_bottom = 50.0
 
 [node name="Map507" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 24.0
-margin_right = 24.0
-margin_bottom = 14.0
+margin_left = 564.0
+margin_right = 642.0
+margin_bottom = 50.0
+icon = ExtResource( 40 )
 
 [node name="Progress7" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 646.0
+margin_right = 646.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress7"]
@@ -1430,18 +1446,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator7" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 650.0
+margin_right = 654.0
 margin_bottom = 50.0
 
 [node name="Map508" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 28.0
-margin_right = 28.0
-margin_bottom = 14.0
+margin_left = 658.0
+margin_right = 736.0
+margin_bottom = 50.0
+icon = ExtResource( 48 )
 
 [node name="Progress8" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 740.0
+margin_right = 740.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress8"]
@@ -1460,18 +1477,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator8" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 744.0
+margin_right = 748.0
 margin_bottom = 50.0
 
 [node name="Map509" type="Button" parent="Courses/FivePoint/FrontNine"]
-margin_left = 32.0
-margin_right = 32.0
-margin_bottom = 14.0
+margin_left = 752.0
+margin_right = 830.0
+margin_bottom = 50.0
+icon = ExtResource( 45 )
 
 [node name="Progress9" type="AspectRatioContainer" parent="Courses/FivePoint/FrontNine"]
-margin_left = 82.0
-margin_right = 82.0
+margin_left = 834.0
+margin_right = 834.0
 margin_bottom = 50.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/FrontNine/Progress9"]
@@ -1490,23 +1508,22 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator9" type="VSeparator" parent="Courses/FivePoint/FrontNine"]
-margin_left = 86.0
-margin_right = 90.0
+margin_left = 838.0
+margin_right = 842.0
 margin_bottom = 50.0
 
 [node name="BackNine" type="HBoxContainer" parent="Courses/FivePoint"]
-margin_top = 36.0
+margin_top = 72.0
 margin_right = 930.0
-margin_bottom = 50.0
+margin_bottom = 86.0
 
 [node name="Map510" type="Button" parent="Courses/FivePoint/BackNine"]
 margin_bottom = 14.0
 
 [node name="Progress10" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress10"]
 visible = false
@@ -1524,21 +1541,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator10" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 8.0
+margin_right = 12.0
+margin_bottom = 14.0
 
 [node name="Map511" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 4.0
-margin_right = 4.0
+margin_left = 16.0
+margin_right = 16.0
 margin_bottom = 14.0
 
 [node name="Progress11" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 20.0
+margin_right = 20.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress11"]
 visible = false
@@ -1556,21 +1571,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator11" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 24.0
+margin_right = 28.0
+margin_bottom = 14.0
 
 [node name="Map512" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 8.0
-margin_right = 8.0
+margin_left = 32.0
+margin_right = 32.0
 margin_bottom = 14.0
 
 [node name="Progress12" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 36.0
+margin_right = 36.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress12"]
 visible = false
@@ -1588,21 +1601,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator12" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 40.0
+margin_right = 44.0
+margin_bottom = 14.0
 
 [node name="Map513" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 12.0
-margin_right = 12.0
+margin_left = 48.0
+margin_right = 48.0
 margin_bottom = 14.0
 
 [node name="Progress13" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 52.0
+margin_right = 52.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress13"]
 visible = false
@@ -1620,21 +1631,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator13" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 56.0
+margin_right = 60.0
+margin_bottom = 14.0
 
 [node name="Map514" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 16.0
-margin_right = 16.0
+margin_left = 64.0
+margin_right = 64.0
 margin_bottom = 14.0
 
 [node name="Progress14" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 68.0
+margin_right = 68.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress14"]
 visible = false
@@ -1652,21 +1661,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator14" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 72.0
+margin_right = 76.0
+margin_bottom = 14.0
 
 [node name="Map515" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 20.0
-margin_right = 20.0
+margin_left = 80.0
+margin_right = 80.0
 margin_bottom = 14.0
 
 [node name="Progress15" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 84.0
+margin_right = 84.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress15"]
 visible = false
@@ -1684,21 +1691,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator15" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 88.0
+margin_right = 92.0
+margin_bottom = 14.0
 
 [node name="Map516" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 24.0
-margin_right = 24.0
+margin_left = 96.0
+margin_right = 96.0
 margin_bottom = 14.0
 
 [node name="Progress16" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 100.0
+margin_right = 100.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress16"]
 visible = false
@@ -1716,21 +1721,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator16" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 104.0
+margin_right = 108.0
+margin_bottom = 14.0
 
 [node name="Map517" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 28.0
-margin_right = 28.0
+margin_left = 112.0
+margin_right = 112.0
 margin_bottom = 14.0
 
 [node name="Progress17" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 116.0
+margin_right = 116.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress17"]
 visible = false
@@ -1748,21 +1751,19 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator17" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 120.0
+margin_right = 124.0
+margin_bottom = 14.0
 
 [node name="Map518" type="Button" parent="Courses/FivePoint/BackNine"]
-margin_left = 32.0
-margin_right = 32.0
+margin_left = 128.0
+margin_right = 128.0
 margin_bottom = 14.0
 
 [node name="Progress18" type="AspectRatioContainer" parent="Courses/FivePoint/BackNine"]
-margin_left = 82.0
-margin_top = -18.0
-margin_right = 82.0
-margin_bottom = 32.0
+margin_left = 132.0
+margin_right = 132.0
+margin_bottom = 14.0
 
 [node name="Star" type="Sprite" parent="Courses/FivePoint/BackNine/Progress18"]
 visible = false
@@ -1780,10 +1781,9 @@ position = Vector2( 0, 35 )
 texture = ExtResource( 9 )
 
 [node name="VSeparator18" type="VSeparator" parent="Courses/FivePoint/BackNine"]
-margin_left = 86.0
-margin_top = -18.0
-margin_right = 90.0
-margin_bottom = 32.0
+margin_left = 136.0
+margin_right = 140.0
+margin_bottom = 14.0
 
 [node name="SixPoint" type="VBoxContainer" parent="Courses"]
 visible = false
@@ -1936,4 +1936,13 @@ text = "Main Menu"
 [connection signal="pressed" from="Courses/FourPoint/BackNine/Map416" to="." method="_on_Map416_pressed"]
 [connection signal="pressed" from="Courses/FourPoint/BackNine/Map417" to="." method="_on_Map417_pressed"]
 [connection signal="pressed" from="Courses/FourPoint/BackNine/Map418" to="." method="_on_Map418_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map501" to="." method="_on_Map501_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map502" to="." method="_on_Map502_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map503" to="." method="_on_Map503_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map504" to="." method="_on_Map504_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map505" to="." method="_on_Map505_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map506" to="." method="_on_Map506_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map507" to="." method="_on_Map507_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map508" to="." method="_on_Map508_pressed"]
+[connection signal="pressed" from="Courses/FivePoint/FrontNine/Map509" to="." method="_on_Map509_pressed"]
 [connection signal="pressed" from="Main" to="." method="_on_Button_pressed"]

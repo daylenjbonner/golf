@@ -217,7 +217,6 @@ func _on_Ball_body_entered(_body):
 		$BounceTimer.start()
 	match ball:
 		"bouncy":
-			var quasi_speed = abs($Ball.linear_velocity.x) + abs($Ball.linear_velocity.y)
 			if can_bounce and not $Ball.get_colliding_bodies().empty():
 				$BounceTimer.start()
 				bounces += 1
